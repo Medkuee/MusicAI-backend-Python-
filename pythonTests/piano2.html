@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 10px;
+      }
+      .header {
+        text-align: center;
+      }
+      .vf-text text {
+        font-size: 23px !important;
+        transform: translateX(25%) !important;
+      }
+      #osmdContainer {
+        margin-top: -30px !important;
+      }
+
+      /* #osmdSvgPage1 > *:last-child {
+        background-color: red !important;
+        font-size: 13px !important;
+      } */
+    </style>
+  </head>
+  <body>
+    <h1 class="header">Music Sheet</h1>
+
+    <div id="osmdContainer" />
+    <script src="opensheetmusicdisplay.min.js"></script>
+    <script>
+      var osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay(
+        "osmdContainer"
+      );
+      osmd.setOptions({
+        backend: "svg",
+        drawTitle: true,
+        autoResize: false,
+        drawingParameters: "compacttight",
+      });
+      osmd.load("lookback_output.mxl").then(function () {
+        osmd.render();
+      });
+    </script>
+  </body>
+</html>
