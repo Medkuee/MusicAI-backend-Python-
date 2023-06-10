@@ -12,9 +12,9 @@ from note_seq.protobuf import music_pb2
 # Create an instance of the Flask application
 app = Flask(__name__)
 
-output_path = "/Users/user/Desktop/Diploma/Music/src/screens/main/guest/guestFavoriteScreen/music-output/"
+output_path = "../MusicAI-mobile/src/screens/main/guest/guestFavoriteScreen/music-output/"
 
-bundle = sequence_generator_bundle.read_bundle_file('lookback_rnn.mag')
+bundle = sequence_generator_bundle.read_bundle_file('models/lookback_rnn.mag')
 generator_map = melody_rnn_sequence_generator.get_generator_map()
 melody_rnn = generator_map['lookback_rnn'](checkpoint=None, bundle=bundle)
 melody_rnn.initialize()
