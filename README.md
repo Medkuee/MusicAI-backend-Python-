@@ -24,5 +24,5 @@ desire to create it themselves.
 
 # Start the project
 
-6. Start the project: `python3 main.py`
+Start the project: `python3 main.py`
 
