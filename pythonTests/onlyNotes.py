@@ -3,7 +3,7 @@ from keras.models import Sequential, load_model
 from keras.layers import LSTM, Dense, Dropout
 import csv
 
-# data = np.genfromtxt('csv-classical/1759.csv', delimiter=',')
+# data = np.genfromtxt('1728.csv', delimiter=',')
 # data = data[:, 3]
 
 # X, y = [], []
@@ -36,7 +36,7 @@ import csv
 # model.compile(loss='mean_squared_error', optimizer='adam')
 
 # # train LSTM model
-# model.fit(X, y, epochs=500, verbose=2)
+# model.fit(X, y, epochs=5, verbose=2)
 
 
 
@@ -49,7 +49,9 @@ generated_music = start_notes
 
 for i in range(100): 
     x_input = np.reshape(generated_music[-3:], (1, 3, 1))
+    print("x_input", x_input)
     y_pred = loaded_model.predict(x_input, verbose=0)
+    print("y_pred", y_pred)
     next_note = int(y_pred)
     generated_music = np.vstack([generated_music, [next_note]])
     

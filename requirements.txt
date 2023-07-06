@@ -55,7 +55,7 @@ kiwisolver
 libclang
 librosa
 llvmlite
-magenta
+# magenta
 Markdown
 MarkupSafe
 matplotlib

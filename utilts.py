@@ -17,7 +17,7 @@ def csvConv():
                 writer.writerow(new_row)
                 row_one = int(row[0])
 def csvPog():
-    with open('1759.csv', 'r') as csvfile:
+    with open('data/1727.csv', 'r') as csvfile:
         reader = csv.reader(csvfile)
         with open('1759re.csv', 'w', newline='') as outfile:
             writer = csv.writer(outfile)
